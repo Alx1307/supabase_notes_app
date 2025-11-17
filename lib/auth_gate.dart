@@ -53,7 +53,6 @@ class _AuthGateState extends State<AuthGate> {
       final password = _passwordController.text.trim();
 
       if (_isSignUp) {
-        // Регистрация
         await supabase.auth.signUp(
           email: email,
           password: password,
@@ -69,7 +68,6 @@ class _AuthGateState extends State<AuthGate> {
           setState(() => _isSignUp = false);
         }
       } else {
-        // Вход
         await supabase.auth.signInWithPassword(
           email: email,
           password: password,
